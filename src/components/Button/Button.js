@@ -34,10 +34,9 @@ const Button = (props) => {
     }
     if (props.hearticon){
         classList += ` button-heart`;
-        return()
+        return(<button className={classList} onClick={props.onClick}><p id="label-text">{props.label}</p></button>)
     }
 
-    // Give the button's class a value of classList
     return <button className={classList} onClick={props.onClick}><p id="label-text">{props.label}</p></button>
 }
 
