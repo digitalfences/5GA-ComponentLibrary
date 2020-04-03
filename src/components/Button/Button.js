@@ -1,4 +1,5 @@
 import React from 'react';
+import './Button.css';
 
 // This is a functional component - just sent up a little differently as an arrow function!
 const Button = (props) => {
@@ -8,7 +9,7 @@ const Button = (props) => {
 
     // Create an array of all of the story/component types you want to be
     // included in your component library
-    let types = ['primary', 'danger', 'success', 'warning']
+    let types = ['primary', 'danger', 'success', 'warning','default']
 
     // Add a conditional statement that checks for the type and updates the 
     // classList variable based on their existence.
@@ -19,11 +20,25 @@ const Button = (props) => {
     // Add another conditional statement to check for additional properties (such as large)
     // and add to the classList variable based on this condition evaluating to true
     if (props.large) {
-        classList += ` button-large` // Note the spacing here since we are adding to the string!
+        classList += ` button-large`;
+    }
+    if (props.outline) {
+        classList += ` button-outline`;
+    }
+    if (props.lightFill) {
+        classList += ` button-light-fill`;
+    }
+    if (props.carticon){
+        classList += ` button-cart`;
+        return (<button className={classList} onClick={props.onClick}><p id="label-text">{props.label}</p></button>)
+    }
+    if (props.hearticon){
+        classList += ` button-heart`;
+        return()
     }
 
     // Give the button's class a value of classList
-    return <button className={classList} onClick={props.onClick}>{props.label}</button>
+    return <button className={classList} onClick={props.onClick}><p id="label-text">{props.label}</p></button>
 }
 
 
