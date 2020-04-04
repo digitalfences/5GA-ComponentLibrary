@@ -30,11 +30,11 @@ const Button = (props) => {
         classList += ` button-light-fill`;
     }
     if (props.carticon){
-        classList += ` button-cart`;
+        classList += ` icon cart`;
         return (<button className={classList} onClick={props.onClick}><Icon type="cart"/><p id="label-text">{props.label}</p></button>)
     }
     if (props.hearticon){
-        classList += ` button-heart`;
+        classList += ` icon heart`;
         return(<button className={classList} onClick={props.onClick}><Icon type="heart"/><p id="label-text">{props.label}</p></button>)
     }
 
