@@ -1,5 +1,6 @@
 import React from 'react';
 import './Button.css';
+import Icon from '.././Icon/Icon.js';
 
 // This is a functional component - just sent up a little differently as an arrow function!
 const Button = (props) => {
@@ -30,11 +31,11 @@ const Button = (props) => {
     }
     if (props.carticon){
         classList += ` button-cart`;
-        return (<button className={classList} onClick={props.onClick}><p id="label-text">{props.label}</p></button>)
+        return (<button className={classList} onClick={props.onClick}><Icon type="cart"/><p id="label-text">{props.label}</p></button>)
     }
     if (props.hearticon){
         classList += ` button-heart`;
-        return(<button className={classList} onClick={props.onClick}><p id="label-text">{props.label}</p></button>)
+        return(<button className={classList} onClick={props.onClick}><Icon type="heart"/><p id="label-text">{props.label}</p></button>)
     }
 
     return <button className={classList} onClick={props.onClick}><p id="label-text">{props.label}</p></button>
