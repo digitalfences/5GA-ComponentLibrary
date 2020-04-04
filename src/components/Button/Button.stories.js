@@ -45,4 +45,8 @@ storiesOf('Button', module)
     .add('Large Default Outline', () => <Button type="default" label="Do something" outline large/>)
     .add('Large Default Light Fill', () => <Button type="default" label="Do something" lightFill large/>)
 
+    .add('Heart Icon w/Text', () => <Button type="primary" label="Add to Favorites" lightFill hearticon/>)
+    .add('Cart Icon w/Text', () => <Button type="primary" label="Add to Cart"  lightFill carticon/>)
+    
+
 
