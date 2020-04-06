@@ -6,8 +6,7 @@ import Icon from '.././Icon/Icon.js';
 const Button = (props) => {
 
     // Declare a classList variable and set it to an empty string
-    let classList = '';
-    let id = '';
+    let classList = props.className;
 
     // Create an array of all of the story/component types you want to be
     // included in your component library

@@ -9,6 +9,11 @@ const Form = (props) => {
         placeholder: props.label
     }
     let classList = '';
+    const submitHandler=(event) =>{
+        event.preventDefault();
+        let fieldValue = event.currentTarget.querySelector('input').value;
+
+    }
     const clickHandler= (event) =>{
         event.target.setAttribute("placeholder","");
     }
@@ -58,10 +63,10 @@ const Form = (props) => {
     }
     if(props.type === 'textButton'){
         return(
-            <div >
-                <input id="textButtonField" type='text' className ={classList} placeholder={props.placeholder}></input>
-                <Button id="textButton" type={props.buttonType} label={props.label} />
-            </div>
+            <form className={"flex"+classList} onSubmit={submitHandler}>
+                <input id="textButtonField" type='text' className ={classList} onClick={clickHandler} placeholder={props.placeholder}></input>
+                <Button className={classList} id="textButton" type={props.buttonType} label={props.label} />
+            </form>
         )
     }
     if(props.type === 'checkBox'){
