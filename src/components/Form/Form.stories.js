@@ -14,9 +14,10 @@ storiesOf('Form', module)
     .add('Select-Medium Filled', () => <Form type="select" placeholder="Select" medium filled/>)
     .add('Select-Large Filled', () => <Form type="select" placeholder="Select" large filled/>)
     .add('Number', () => <Form type="number" label="" />)
-    .add('TextButton', () => <Form type="button" label="Email" />)
-    .add('Black Checkbox', () => <Form type="checkBox" label="" />)
-    .add('Blue Checkbox', () => <Form type="checkBox" label="" />)
+    .add('TextButton', () => <Form type="textButton" label="Email" size=""/>)
+    .add('Black Checkbox', () => <Form type="checkBox" label="" color="black" />)
+    .add('Blue Checkbox', () => <Form type="checkBox" label="" color="blue"/>)
+    .add('Black Checkbox w/Label', () => <Form type="checkBox" label="Don't show this pop-up again." color="black" />)
     
     
     

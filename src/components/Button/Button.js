@@ -7,6 +7,7 @@ const Button = (props) => {
 
     // Declare a classList variable and set it to an empty string
     let classList = '';
+    let id = '';
 
     // Create an array of all of the story/component types you want to be
     // included in your component library
@@ -38,7 +39,7 @@ const Button = (props) => {
         return(<button className={classList} onClick={props.onClick}><Icon type="heart"/><p id="label-text">{props.label}</p></button>)
     }
 
-    return <button className={classList} onClick={props.onClick}><p id="label-text">{props.label}</p></button>
+    return <button id={props.id} className={classList} onClick={props.onClick}><p id="label-text">{props.label}</p></button>
 }
 
 

@@ -1,19 +1,36 @@
-.inputField{
+select{
+    width: 300px;
+    padding-left:1em;
+    background-color: white;
+}
+input{
     width: 300px;
     padding-left:1em;
     width: 300px;
     background-color: white;
 }
-.large .inputField{
+select.large {
     height: 60px;
 }
-.medium .inputField{
+select.medium{
     height: 46px;
 }
-.small .inputField{
+select.small{
     height: 38px;
 }
-.filled .inputField{
+input.large {
+    height: 60px;
+}
+input.medium{
+    height: 46px;
+}
+input.small{
+    height: 38px;
+}
+input.filled {
+    background-color: rgba(250,250,251);
+}
+select.filled {
     background-color: rgba(250,250,251);
 }
 .number-form{
@@ -32,7 +49,16 @@
 .number-form button{
     width:33%;
     padding:0px;
-    color:black;
+    color:rgba(51,160,255);
     background-color: rgba(250,250,251);
     border:none;
+}
+#textButton{
+    height: 100%;
+    width: 30%;
+    padding: 2.5% 5%;
+}
+#textButtonField{
+    height:100%;
+    width: 70%;
 }

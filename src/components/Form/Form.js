@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '.././Button/Button.js';
+import Check from './Check.js';
 import './Form.css';
 
 const Form = (props) => {
@@ -38,14 +39,11 @@ const Form = (props) => {
         classList += ` filled`;
     }
 
-    if(props.type === 'email'){
-
-    }
     if(props.type === 'select'){
 
-        return <div className={classList}>
+        return <div>
         <select onClick={clickHandler} 
-        className="inputField">
+        className ={classList}>
             <option>{props.placeholder}</option>
         </select></div>
     }
@@ -58,15 +56,31 @@ const Form = (props) => {
             <button id="dec-button" onClick={numberChanger} label="+">+</button>
        </div>)
     }
-    if(props.type === 'button'){
-        
+    if(props.type === 'textButton'){
+        return(
+            <div >
+                <input id="textButtonField" type='text' className ={classList} placeholder={props.placeholder}></input>
+                <Button id="textButton" type={props.buttonType} label={props.label} />
+            </div>
+        )
     }
     if(props.type === 'checkBox'){
-        
+       return(
+           <div className={classList}>
+               <Check type={props.type} color={props.color} label={props.label}></Check>
+           </div>
+       ) 
     }
+    let label ='';
 
+    if(props.label){
+        label = 
+            <span>{props.label}<br></br></span>
+    }
+    
+    label =[label];
     return(
-        <div className={classList}>{props.label}<br></br><input className="inputField" onClick={clickHandler} type="text" placeholder={props.placeholder}></input></div>
+        <div >{label}<input className={classList} onClick={clickHandler} type="text" placeholder={props.placeholder}></input></div>
     )
 }
 
