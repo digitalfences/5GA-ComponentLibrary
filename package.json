@@ -1,7 +1,7 @@
 {
   "name": "my-first-component-library",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
@@ -31,5 +31,17 @@
   },
   "devDependencies": {
     "@storybook/react": "^5.3.18"
-  }
+  },
+  "description": "A library of components specified by a bouncer.xd markup file.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digitalfences/5GA-ComponentLibrary.git"
+  },
+  "author": "Galen Emanuel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/digitalfences/5GA-ComponentLibrary/issues"
+  },
+  "homepage": "https://github.com/digitalfences/5GA-ComponentLibrary#readme"
 }
