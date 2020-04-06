@@ -7,6 +7,7 @@ import hover2 from '../../.././img/hover.png';
 import star from '../../.././img/star copy 3.png';
 import discount from '../../.././img/Group 7.png';
 import headphones from '../../.././img/product.png';
+import hotitem from '../../.././img/item.png';
 /**
  * Product Styles
  * 
@@ -29,15 +30,29 @@ const Product = (props) => {
     let classList ='';
     let imagePath = '';
     let imageAlt ='';
+    const hoverHandler2 = (event) => {
+        
+            event.target.setAttribute('src',laptop)
+    }
+    const hoverHandler = (event) => {
+
+            if (props.filled){
+                event.target.setAttribute('src',hover2)
+            }
+            else{
+                event.target.setAttribute('src',hover1)
+            }
+    }
+
+
+
+
     if(props.type === 'block'){
         if(props.small){
             classList += ` product-small`;
             imagePath = headphones;
-            return(<div className="long-block">
-                    <img className="product-image" src={imagePath} alt ={imageAlt}></img>
-                    <h1>{props.label}</h1>
-                    <img className="product-discount" src={discount} alt ="discoun-price"></img>
-
+            return(<div className="small-block">
+                    <img className="small-image" src={imagePath} alt ={imageAlt}></img>
                 </div>)
         }
         if (props.long){
@@ -45,9 +60,9 @@ const Product = (props) => {
             imagePath = laptop;
             return(<div className="long-block">
                     <img className="product-image" src={imagePath} alt ={imageAlt}></img>
-                    <h1>{props.label}</h1>
-                    <img className="product-discount" src={discount} alt ="discoun-price"></img>
-
+                    <div className="long-content"><h1>{props.label}</h1>
+                    <img className="product-discount" src={discount} alt ="discount-price"></img>
+                    </div>
                 </div>)
         }
         if (props.default){
@@ -62,7 +77,7 @@ const Product = (props) => {
             }
             return(
                 <div className={classList}>
-                    <img className="product-image" src={imagePath} alt ={imageAlt}></img>
+                    <img className="product-image" onMouseEnter={hoverHandler} onMouseLeave={hoverHandler2} src={imagePath} alt ={imageAlt}></img>
                     <h1>{props.label}</h1>
                     <img className="product-discount" src={discount} alt ="discoun-price"></img>
 
@@ -73,14 +88,24 @@ const Product = (props) => {
     }
     else{
         classList += ` product-inline`;
-        return(<div className="long-block">
-                    <img className="product-image" src={imagePath} alt ={imageAlt}></img>
-                    <h1>{props.label}</h1>
-                    <img className="product-discount" src={discount} alt ="discoun-price"></img>
-
+        imagePath = hotitem;
+        return(<div className="inline-block">
+                    <div className="inline-img">
+                        <img className="product-image" src={imagePath} alt ={imageAlt}></img>
+                    </div>
+                    <div className="inline-content">
+                        <h1>{props.label}</h1>
+                        <span><h4>0 Reviews <a href="">Submit a Review</a></h4> </span>
+                        <img className="product-discount" src={discount} alt ="discount-price"></img>
+                        <p>{props.desc}</p>
+                        <div className="inline-button">
+                            <Button type="primary" label="Add to Cart"  lightFill carticon/>
+                            <Button type="primary" label="" lightFill hearticon/>
+                            </div>
+                        
+                    </div>
                 </div>)
-    }
-    
+    }   
 }
 
 export default Product

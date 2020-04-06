@@ -12,7 +12,6 @@ const Form = (props) => {
     const submitHandler=(event) =>{
         event.preventDefault();
         let fieldValue = event.currentTarget.querySelector('input').value;
-
     }
     const clickHandler= (event) =>{
         event.target.setAttribute("placeholder","");
@@ -80,7 +79,7 @@ const Form = (props) => {
 
     if(props.label){
         label = 
-            <span>{props.label}<br></br></span>
+            <span key={'1'}>{props.label}<br></br></span>
     }
     
     label =[label];
